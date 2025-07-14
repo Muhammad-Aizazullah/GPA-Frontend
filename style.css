@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --light-bg: #F2F2F2;
+    --primary-color: #EAE4D5;
+    --secondary-color: #B6B09F;
+    --dark-text: #000000;
+    --accent-color: #C83F12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.main-header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Main Container */
+.container {
+    background-color: var(--primary-color);
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    max-width: 600px;
+    margin: 40px 20px;
+    color: var(--dark-text);
+}
+
+h2, h3 {
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
+#gpaForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.form-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+    font-size: 1rem;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(182, 176, 159, 0.5);
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+#resetBtn {
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+}
+
+#courseList {
+    list-style: none;
+    background: var(--light-bg);
+    padding: 10px;
+    border-radius: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    color: var(--dark-text);
+}
+
+#courseList li {
+    padding: 8px 5px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+#gpaDisplay {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--dark-text);
+    margin-top: 20px;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.gpa-options {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    color: var(--dark-text);
+}
+
+.gpa-options input, .gpa-options button {
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-display {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    color: var(--accent-color);
+    text-align: center;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* Notification Style */
+.notification {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.notification.success {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.notification.error {
+    background-color: #e57373;
+    color: #fff;
+}
+
+/* Section Heading */
+.section-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 40px;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    width: 100%;
+    padding: 50px 30px;
+    background-color: var(--light-bg);
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    text-align: center;
+    color: var(--dark-text);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+}
+
+.step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.step p {
+    color: var(--dark-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+    width: 100%;
+    padding: 50px 30px;
+    background-color: var(--primary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--dark-text);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+    border-bottom: none;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* Info Section */
+.info-container1, .info-container2 {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 16px;
+    border: 1px solid var(--secondary-color);
+    color: var(--dark-text);
+}
+
+.info-card {
+    margin-bottom: 25px;
+}
+
+.info-card h1, .info-card h2, .info-card h3 {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.info-card h4 {
+    color: var(--dark-text);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.info-card p, .info-card li {
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+.info-card ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+/* Final Footer (Modern Layout) */
+.main-footer {
+    width: 100%;
+    background-color: #000;
+    color: var(--primary-color);
+    padding: 40px 5%;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-column p {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.language-dropdown select {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid var(--secondary-color);
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

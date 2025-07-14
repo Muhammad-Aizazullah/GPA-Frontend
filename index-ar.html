@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حاسبة المعدل التراكمي 🎓</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Localization Tags -->
+  <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="en" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="es" href="https://yourdomain.com/es/" />
+  <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/" />
+  <link rel="alternate" hreflang="pt" href="https://yourdomain.com/pt/" />
+  <link rel="alternate" hreflang="ru" href="https://yourdomain.com/ru/" />
+  <link rel="alternate" hreflang="ar" href="https://yourdomain.com/ar/" />
+</head>
+<body>
+
+  <header class="main-header">
+    <nav>
+      <div class="logo">حاسبة المعدل 📘</div>
+      <ul class="nav-links">
+        <li><a href="index-ar.html">الرئيسية</a></li>
+        <li><a href="#how-it-works-section">كيف تعمل</a></li>
+        <li><a href="#features-section">لماذا نحن؟</a></li>
+        <li><a href="#about-us-section">من نحن</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="notificationArea"></section>
+
+    <form id="gpaForm">
+      <input type="text" id="course" placeholder="اسم المقرر" required />
+      <input type="number" id="credit" placeholder="عدد الساعات" required min="1" />
+      <select id="grade" required>
+        <option value="">اختر التقدير</option>
+        <option value="A+">A+</option><option value="A">A</option><option value="A-">A-</option>
+        <option value="B+">B+</option><option value="B">B</option><option value="B-">B-</option>
+        <option value="C+">C+</option><option value="C">C</option><option value="C-">C-</option>
+        <option value="D+">D+</option><option value="D">D</option><option value="F">F</option>
+      </select>
+      <div class="form-buttons">
+        <button type="submit" id="addCourseBtn">➕ أضف المقرر</button>
+        <button type="button" id="resetBtn">🔄 إعادة تعيين</button>
+      </div>
+    </form>
+
+    <section>
+      <h2>📝 المقررات المضافة:</h2>
+      <ul id="courseList"></ul>
+      <h2 id="gpaDisplay">المعدل الحالي: 0.00</h2>
+    </section>
+
+    <div class="buttons">
+      <button id="togglePriorBtn">معدل الفصل السابق والمعدل النهائي</button>
+      <button id="togglePlanningBtn">حاسبة تخطيط المعدل</button>
+    </div>
+
+    <div id="priorSemesterSection" class="gpa-options hidden">
+      <h3>معدل الفصل السابق</h3>
+      <input type="number" id="priorGPA" placeholder="معدل الفصل السابق" step="0.01" min="0" max="4" />
+      <input type="number" id="completedCredits" placeholder="الساعات المكتملة" min="0" />
+      <button id="calculateFinalGpaBtn">احسب المعدل النهائي</button>
+      <div class="result-display" id="finalGpaResult"></div>
+    </div>
+
+    <div id="gpaPlanningSection" class="gpa-options hidden">
+      <h3>حاسبة تخطيط المعدل</h3>
+      <input type="number" id="currentGPA" placeholder="المعدل الحالي" step="0.01" min="0" max="4" />
+      <input type="number" id="targetGPA" placeholder="المعدل المستهدف" step="0.01" min="0" max="4" />
+      <input type="number" id="currentCredits" placeholder="الساعات الحالية" min="0" />
+      <input type="number" id="additionalCredits" placeholder="الساعات الإضافية" min="0" />
+      <button id="calculateRequiredGpaBtn">احسب المعدل المطلوب</button>
+      <div class="result-display" id="planningResult"></div>
+    </div>
+  </div>
+
+  <section class="how-it-works-section" id="how-it-works-section">
+    <h2 class="section-heading">كيف تعمل الحاسبة؟</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>أضف المقررات</h4>
+        <p>أدخل اسم المقرر وعدد الساعات والتقدير الذي حصلت عليه.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>شاهد المعدل الفوري</h4>
+        <p>يتم احتساب المعدل فورياً أثناء إدخال المقررات.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>خطط للنجاح</h4>
+        <p>استخدم أدوات التخطيط لتحديد المعدل المستهدف وتحقيق أهدافك الأكاديمية.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features-section">
+    <h2 class="section-heading">لماذا تختار حاسبتنا؟</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>حساب فوري</h3>
+        <p>أضف المقررات وشاهد المعدل يتحدث تلقائيًا في الوقت الحقيقي.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>دقيق وموثوق</h3>
+        <p>يعتمد على نظام الدرجات القياسي لنتائج دقيقة ومضمونة.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>تخطيط ذكي</h3>
+        <p>حدد المعدل المستهدف وتابع ما يلزم للوصول إليه.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>© 2025 حاسبة المعدل التراكمي. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

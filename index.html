@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator 🎓</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo">GPA Calculator 📘</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#how-it-works-section">How It Works</a></li>
+                <li><a href="#features-section">Why Choose Us</a></li>
+                <li><a href="#about-us-section">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="notificationArea"></section>
+
+        <form id="gpaForm">
+            <input type="text" id="course" placeholder="Course Name" required>
+            <input type="number" id="credit" placeholder="Credit Hours" required min="1">
+            <select id="grade" required>
+                <option value="">Select Grade</option>
+                <option value="A+">A+</option><option value="A">A</option><option value="A-">A-</option>
+                <option value="B+">B+</option><option value="B">B</option><option value="B-">B-</option>
+                <option value="C+">C+</option><option value="C">C</option><option value="C-">C-</option>
+                <option value="D+">D+</option><option value="D">D</option><option value="F">F</option>
+            </select>
+            <div class="form-buttons">
+                <button type="submit" id="addCourseBtn">➕ Add Course</button>
+                <button type="button" id="resetBtn">🔄 Reset</button>
+            </div>
+        </form>
+
+        <section>
+            <h2>📝 Courses Added:</h2>
+            <ul id="courseList"></ul>
+            <h2 id="gpaDisplay">Current GPA: 0.00</h2>
+        </section>
+
+        <div class="buttons">
+            <button id="togglePriorBtn">Prior Semester & Final GPA</button>
+            <button id="togglePlanningBtn">GPA Planning Calculator</button>
+        </div>
+
+        <div id="priorSemesterSection" class="gpa-options hidden">
+            <h3>Prior Semester's GPA</h3>
+            <input type="number" id="priorGPA" placeholder="Prior Semester's GPA" step="0.01" min="0" max="4">
+            <input type="number" id="completedCredits" placeholder="Credits Completed" min="0">
+            <button id="calculateFinalGpaBtn">Calculate Final GPA</button>
+            <div class="result-display" id="finalGpaResult"></div>
+        </div>
+
+        <div id="gpaPlanningSection" class="gpa-options hidden">
+            <h3>GPA Planning Calculator</h3>
+            <input type="number" id="currentGPA" placeholder="Current GPA" step="0.01" min="0" max="4">
+            <input type="number" id="targetGPA" placeholder="Target GPA" step="0.01" min="0" max="4">
+            <input type="number" id="currentCredits" placeholder="Current Credits" min="0">
+            <input type="number" id="additionalCredits" placeholder="Additional Credits" min="0">
+            <button id="calculateRequiredGpaBtn">Calculate Required GPA</button>
+            <div class="result-display" id="planningResult"></div>
+        </div>
+    </div>
+
+    <section class="how-it-works-section" id="how-it-works-section">
+        <h2 class="section-heading">How Our Calculator Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Add Courses</h4>
+                <p>Enter your course name, credit hours, and the grade you received for each subject.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>View Instant GPA</h4>
+                <p>Your current semester's GPA is calculated and displayed instantly as you add courses.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Plan & Analyze</h4>
+                <p>Use the advanced options to calculate cumulative and target GPAs to plan your success.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features-section">
+        <h2 class="section-heading">Why Choose Our GPA Calculator?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Instant Calculation</h3>
+                <p>Add courses and see your GPA update in real-time, saving you time and effort.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Accurate & Reliable</h3>
+                <p>Our calculator uses standard grade point values to ensure your results are always accurate.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Plan for Success</h3>
+                <p>Use our planning tools to set target GPAs and see what you need to achieve your academic goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-container2" id="about-us-section">
+        <div class="info-card">
+            <h1 style="text-align: center;">About Our GPA Calculator</h1>
+            <p>Welcome to our GPA Calculator, a comprehensive and user-friendly tool designed to simplify academic tracking and planning. We understand the importance of GPA in your academic journey, and our goal is to provide a reliable platform for students to monitor their progress and set achievable goals. Our calculator is built with precision, using standard grading scales to ensure accurate results. Whether you're tracking your current semester's GPA, calculating your cumulative GPA with prior coursework, or planning your future academic performance to reach a target GPA, our tool provides the insights you need. We are committed to empowering students with the resources to succeed, making academic planning less daunting and more accessible. Start using our calculator today and take control of your academic future!</p>
+        </div>
+    </section>
+    
+    <section class="info-container2" id="info-section-grades">
+        <div class="info-card">
+            <h1 style="text-align: center;">Letter Grade and Numerical Equivalents</h1>
+            <p>Grade point average (GPA) is a commonly used indicator of an individual's academic achievement in school. It is the average of the grades attained in each course, taking course credit into consideration. Grading systems vary in different countries, or even schools. This calculator accepts letter grades as well as numerical inputs. These letter grades are translated into numerical values as shown below:</p>
+            <br>
+            <h2>Chart</h2>
+            <ul>
+                <li>A+ = 4.3 grade points</li>
+                <li>A = 4 grade points</li>
+                <li>A- = 3.7 grade points</li>
+                <li>B+ = 3.3 grade points</li>
+                <li>B = 3 grade points</li>
+                <li>B- = 2.7 grade points</li>
+                <li>C+ = 2.3 grade points</li>
+                <li>C = 2 grade points</li>
+                <li>C- = 1.7 grade points</li>
+                <li>D+ = 1.3 grade points</li>
+                <li>D = 1 grade point</li>
+                <li>F = 0 grade points</li>
+            </ul>
+            <br><br>
+            <p>Most schools, colleges, and universities in the United States use a grading system based on the letters above, though E is sometimes used instead of F. Grading systems do differ however based on what constitutes an A or B, and some do not include grades such as an A+ or a B-. Others may attribute more weight to certain courses, and thus whatever grade is attained in the course will have a larger effect on overall GPA. The calculator can account for this based on the number of credits attributed to a course, where credit is the "weighting" of the course, as shown in the examples below.</p>
+        </div>
+    </section>
+
+
+    <section class="info-container2">
+        <div class="info-card">
+            <h1 style="text-align: center;">Guidelines for Raising GPA</h1>
+            <br>
+        <div class="info-card">
+            <h2>Actively Attending Classes</h2>
+            <p>Attending classes regularly is a key factor in maintaining and improving your GPA.<br>
+When you’re present in class, you stay up-to-date with important topics, assignments, and announcements.<br>
+You also get the chance to understand concepts directly from the teacher, which helps reduce confusion later.<br>
+Being in class allows you to engage with the material more actively by asking questions and participating in discussions.<br>
+Teachers often give hints about exams or focus on certain areas that are more important — and these can be missed if you're absent.<br>
+Moreover, showing up consistently creates a positive impression and can even help you earn participation marks in some cases.<br>
+It also builds discipline and a regular study routine.<br>
+Remember, success in academics starts with simply being present and paying attention.<br>
+Make class attendance a priority — it's the foundation for better learning and a higher GPA.</p>
+        </div>
+        <div class="info-card">
+            <h2> Smart Planning</h2>
+            <p>Smart planning is essential for academic success and raising your GPA.<br>
+It helps you manage your time effectively and stay ahead of deadlines.<br>
+Start by creating a weekly schedule that includes study time, class timings, assignment deadlines, and breaks.<br>
+Setting clear, realistic goals for each day or week keeps you focused and motivated.<br>
+Instead of cramming the night before, divide your study material into smaller parts and review them consistently.<br>
+Use tools like planners, calendars, or mobile apps to keep track of tasks and progress.<br>
+Prioritize difficult subjects and give them more time and attention.<br>
+Smart planning also includes preparing early for exams, revising regularly, and avoiding procrastination.<br>
+By planning wisely, you reduce stress and increase productivity.<br>
+You gain better control over your academic life and make room for rest and other activities too.<br>
+In short, organized effort always beats last-minute panic — plan smart to perform better.</p>
+        </div>
+        <div class="info-card">
+            <h2>Focused Study Time</h2>
+            <p>Having focused study time is one of the most effective ways to boost your GPA.<br>
+It’s not just about studying longer — it’s about studying smarter.<br>
+Find a quiet and comfortable place where you can concentrate without distractions like your phone or social media.<br>
+Set a fixed time daily for studying so your brain gets used to the routine.<br>
+Use techniques like the Pomodoro method — 25 minutes of focused study followed by a 5-minute break.<br>
+Break big topics into smaller sections and focus on one thing at a time.<br>
+Actively engage with the material by summarizing, making flashcards, or teaching it to someone else.<br>
+Quality matters more than quantity — one hour of deep focus is better than three hours of distracted reading.<br>
+Review what you studied at the end to strengthen memory.<br>
+Consistent and focused effort leads to better understanding, better retention, and a higher GPA.</p>
+        </div>
+        <div class="info-card">
+            <h2>Seeking Help When Needed</h2>
+            <p>One of the most important steps in improving your GPA is recognizing when you need help and having the courage to ask for it.<br>
+Many students hesitate to seek assistance because they feel embarrassed or think they should figure everything out on their own.<br>
+However, asking for help is a smart strategy, not a weakness.<br>
+If you're struggling with a subject, talk to your teacher or professor during office hours.<br>
+They can clarify concepts and guide you toward helpful resources.<br>
+You can also form or join study groups, where discussing problems with peers often leads to better understanding.<br>
+Online platforms, video tutorials, and academic forums are also excellent tools for extra support.<br>
+The key is to never let confusion build up.<br>
+Getting help early can prevent minor difficulties from turning into major setbacks.<br>
+Always remember, successful students aren’t afraid to ask questions—they ask until they understand.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-column brand">
+        <div class="logo-footer">
+          <i class="fas fa-book-open" style="font-size: 24px; color: #000;"></i>
+          <span class="brand-name">GPA Calculator</span>
+        </div>
+        <p>Track and plan your GPA with precision. Simple. Fast. Reliable.</p>
+        <p><i class="fas fa-envelope"></i> support@gpacalculator.org</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>RESOURCES</h4>
+        <ul>
+          <li><a href="#">GPA Tool</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">API Plan</a></li>
+          <li><a href="#">Documentation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>LANGUAGES</h4>
+        <div class="language-dropdown">
+          <select onchange="location = this.value;">
+            <option value="index.html" selected>🇺🇸 English</option>
+            <option value="index-es.html">🇪🇸 Spanish</option>
+            <option value="index-ar.html">🇸🇦 Arabic</option>
+            <option value="index-ru.html">🇷🇺 Russian</option>
+            <option value="index-pt.html">🇵🇹 Portuguese</option>
+            <option value="index-fr.html">🇫🇷 French</option>
+            <option value="index-de.html">🇩🇪 German</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Copyright 2025 | GPA Calculator</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

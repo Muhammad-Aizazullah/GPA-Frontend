@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор GPA 🎓</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Localization Tags -->
+  <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="en" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="es" href="https://yourdomain.com/es/" />
+  <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/" />
+  <link rel="alternate" hreflang="pt" href="https://yourdomain.com/pt/" />
+  <link rel="alternate" hreflang="ar" href="https://yourdomain.com/ar/" />
+  <link rel="alternate" hreflang="ru" href="https://yourdomain.com/ru/" />
+</head>
+<body>
+
+  <header class="main-header">
+    <nav>
+      <div class="logo">Калькулятор GPA 📘</div>
+      <ul class="nav-links">
+        <li><a href="index-ru.html">Главная</a></li>
+        <li><a href="#how-it-works-section">Как работает</a></li>
+        <li><a href="#features-section">Почему мы</a></li>
+        <li><a href="#about-us-section">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="notificationArea"></section>
+
+    <form id="gpaForm">
+      <input type="text" id="course" placeholder="Название курса" required />
+      <input type="number" id="credit" placeholder="Кредитные часы" required min="1" />
+      <select id="grade" required>
+        <option value="">Выберите оценку</option>
+        <option value="A+">A+</option><option value="A">A</option><option value="A-">A-</option>
+        <option value="B+">B+</option><option value="B">B</option><option value="B-">B-</option>
+        <option value="C+">C+</option><option value="C">C</option><option value="C-">C-</option>
+        <option value="D+">D+</option><option value="D">D</option><option value="F">F</option>
+      </select>
+      <div class="form-buttons">
+        <button type="submit" id="addCourseBtn">➕ Добавить курс</button>
+        <button type="button" id="resetBtn">🔄 Сбросить</button>
+      </div>
+    </form>
+
+    <section>
+      <h2>📝 Добавленные курсы:</h2>
+      <ul id="courseList"></ul>
+      <h2 id="gpaDisplay">Текущий GPA: 0.00</h2>
+    </section>
+
+    <div class="buttons">
+      <button id="togglePriorBtn">Предыдущий семестр и итоговый GPA</button>
+      <button id="togglePlanningBtn">Калькулятор планирования GPA</button>
+    </div>
+
+    <div id="priorSemesterSection" class="gpa-options hidden">
+      <h3>GPA предыдущего семестра</h3>
+      <input type="number" id="priorGPA" placeholder="GPA предыдущего семестра" step="0.01" min="0" max="4" />
+      <input type="number" id="completedCredits" placeholder="Пройденные кредиты" min="0" />
+      <button id="calculateFinalGpaBtn">Рассчитать итоговый GPA</button>
+      <div class="result-display" id="finalGpaResult"></div>
+    </div>
+
+    <div id="gpaPlanningSection" class="gpa-options hidden">
+      <h3>Калькулятор планирования GPA</h3>
+      <input type="number" id="currentGPA" placeholder="Текущий GPA" step="0.01" min="0" max="4" />
+      <input type="number" id="targetGPA" placeholder="Желаемый GPA" step="0.01" min="0" max="4" />
+      <input type="number" id="currentCredits" placeholder="Текущие кредиты" min="0" />
+      <input type="number" id="additionalCredits" placeholder="Дополнительные кредиты" min="0" />
+      <button id="calculateRequiredGpaBtn">Рассчитать нужный GPA</button>
+      <div class="result-display" id="planningResult"></div>
+    </div>
+  </div>
+
+  <section class="how-it-works-section" id="how-it-works-section">
+    <h2 class="section-heading">Как работает наш калькулятор?</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Добавьте курсы</h4>
+        <p>Введите название курса, количество кредитов и полученную оценку.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Смотрите GPA в реальном времени</h4>
+        <p>Ваш GPA рассчитывается мгновенно по мере добавления курсов.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Планируйте заранее</h4>
+        <p>Используйте расширенные опции для расчета итогового или желаемого GPA.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features-section">
+    <h2 class="section-heading">Почему выбирают нас?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Мгновенный расчет</h3>
+        <p>Добавляйте курсы и сразу же получайте GPA — просто и удобно.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Точно и надежно</h3>
+        <p>Использует стандартные значения баллов, обеспечивая точные результаты.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Планируйте успех</h3>
+        <p>Настройте целевой GPA и следите за прогрессом для достижения своих целей.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>© 2025 Калькулятор GPA. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculateur de GPA 🎓</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Localization Tags -->
+  <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="en" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="es" href="https://yourdomain.com/es/" />
+  <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/" />
+  <link rel="alternate" hreflang="pt" href="https://yourdomain.com/pt/" />
+  <link rel="alternate" hreflang="ru" href="https://yourdomain.com/ru/" />
+  <link rel="alternate" hreflang="ar" href="https://yourdomain.com/ar/" />
+</head>
+<body>
+
+  <header class="main-header">
+    <nav>
+      <div class="logo">Calculateur de GPA 📘</div>
+      <ul class="nav-links">
+        <li><a href="index-fr.html">Accueil</a></li>
+        <li><a href="#how-it-works-section">Comment ça fonctionne</a></li>
+        <li><a href="#features-section">Pourquoi nous choisir</a></li>
+        <li><a href="#about-us-section">À propos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="notificationArea"></section>
+
+    <form id="gpaForm">
+      <input type="text" id="course" placeholder="Nom du cours" required />
+      <input type="number" id="credit" placeholder="Crédits" required min="1" />
+      <select id="grade" required>
+        <option value="">Sélectionnez une note</option>
+        <option value="A+">A+</option><option value="A">A</option><option value="A-">A-</option>
+        <option value="B+">B+</option><option value="B">B</option><option value="B-">B-</option>
+        <option value="C+">C+</option><option value="C">C</option><option value="C-">C-</option>
+        <option value="D+">D+</option><option value="D">D</option><option value="F">F</option>
+      </select>
+      <div class="form-buttons">
+        <button type="submit" id="addCourseBtn">➕ Ajouter un cours</button>
+        <button type="button" id="resetBtn">🔄 Réinitialiser</button>
+      </div>
+    </form>
+
+    <section>
+      <h2>📝 Cours ajoutés :</h2>
+      <ul id="courseList"></ul>
+      <h2 id="gpaDisplay">GPA actuel : 0.00</h2>
+    </section>
+
+    <div class="buttons">
+      <button id="togglePriorBtn">Semestre précédent & GPA final</button>
+      <button id="togglePlanningBtn">Planificateur de GPA</button>
+    </div>
+
+    <div id="priorSemesterSection" class="gpa-options hidden">
+      <h3>GPA du semestre précédent</h3>
+      <input type="number" id="priorGPA" placeholder="GPA précédent" step="0.01" min="0" max="4" />
+      <input type="number" id="completedCredits" placeholder="Crédits complétés" min="0" />
+      <button id="calculateFinalGpaBtn">Calculer le GPA final</button>
+      <div class="result-display" id="finalGpaResult"></div>
+    </div>
+
+    <div id="gpaPlanningSection" class="gpa-options hidden">
+      <h3>Planificateur de GPA</h3>
+      <input type="number" id="currentGPA" placeholder="GPA actuel" step="0.01" min="0" max="4" />
+      <input type="number" id="targetGPA" placeholder="GPA cible" step="0.01" min="0" max="4" />
+      <input type="number" id="currentCredits" placeholder="Crédits actuels" min="0" />
+      <input type="number" id="additionalCredits" placeholder="Crédits supplémentaires" min="0" />
+      <button id="calculateRequiredGpaBtn">Calculer le GPA requis</button>
+      <div class="result-display" id="planningResult"></div>
+    </div>
+  </div>
+
+  <section class="how-it-works-section" id="how-it-works-section">
+    <h2 class="section-heading">Comment fonctionne notre calculateur</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Ajouter des cours</h4>
+        <p>Entrez le nom du cours, les crédits et la note obtenue.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Voir le GPA instantané</h4>
+        <p>Votre GPA est mis à jour instantanément au fur et à mesure que vous ajoutez des cours.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Planifiez votre réussite</h4>
+        <p>Utilisez les options avancées pour définir un GPA cible et planifier votre réussite académique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features-section">
+    <h2 class="section-heading">Pourquoi choisir notre calculateur de GPA ?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>Calcul instantané</h3>
+        <p>Ajoutez des cours et voyez votre GPA se mettre à jour en temps réel.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Précis et fiable</h3>
+        <p>Utilise les valeurs standards de notation pour garantir des résultats exacts.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Planifiez votre succès</h3>
+        <p>Définissez un GPA cible et suivez ce qu’il vous faut pour l’atteindre.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>© 2025 Calculateur de GPA. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
