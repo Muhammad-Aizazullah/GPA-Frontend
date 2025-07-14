@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Zaroori Note: Jab aapka backend live ho jaye, toh is API_BASE ko apne live backend ke URL se replace karain.
     // Maslan: const API_BASE = 'https://apka-backend-name.up.railway.app';
-    const API_BASE = ''; // Leave blank for same-origin or use full URL if hosted separately
+    const API_BASE = 'https://gpa-backend-production.up.railway.app'; // Apne actual backend URL se badal dein // Leave blank for same-origin or use full URL if hosted separately
 
     function showNotification(message, type) {
         notificationArea.textContent = message;
